@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /autogen-2024-11-02-101829/
+Sitemap: https://zxpr0hem.b12sites.com/sitemap.xml
