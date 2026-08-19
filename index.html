@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(주)유앤디 - 특수 토목 엔지니어링 & 수직구 확공·발파 신기술</title>
+  <meta name="description" content="EBS 극한직업 방영 공법, 한국의 미래 100년을 이끌 특수 수직구 확공, 특수목적 리프트/크레인, 초장대교 엔지니어링 - (주)유앤디">
+  <style>
+    :root {
+      --primary-color: #0f172a;
+      --accent-color: #0284c7;
+      --accent-hover: #0369a1;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', 'Malgun Gothic', -apple-system, sans-serif; }
+    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+
+    /* 상단 네비게이션 헤더 */
+    header {
+      position: sticky; top: 0; background: var(--primary-color);
+      color: #fff; padding: 16px 24px; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+    .logo { font-size: 22px; font-weight: 800; color: #38bdf8; text-decoration: none; letter-spacing: 0.5px; }
+    nav a { color: #e2e8f0; text-decoration: none; margin-left: 22px; font-size: 15px; font-weight: 600; transition: color 0.2s; }
+    nav a:hover { color: #38bdf8; }
+
+    /* 메인 히어로 배너 */
+    .hero {
+      background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)),
+                  url('https://images.unsplash.com/photo-1541888946425-d0fbb18f15f6?auto=format&fit=crop&w=1400&q=80') center/cover;
+      color: #fff; text-align: center; padding: 90px 20px 80px;
+    }
+    .hero-badge {
+      display: inline-block; background: rgba(56, 189, 248, 0.15); color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.5); padding: 6px 16px; border-radius: 20px;
+      font-size: 13px; font-weight: 700; margin-bottom: 18px; letter-spacing: 0.5px;
+    }
+    .hero h1 { font-size: 34px; font-weight: 800; margin-bottom: 16px; line-height: 1.35; }
+    .hero p { font-size: 17px; color: #cbd5e1; max-width: 780px; margin: 0 auto; line-height: 1.6; }
+
+    /* 공통 레이아웃 */
+    .container { max-width: 1200px; margin: 70px auto; padding: 0 20px; }
+    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title h2 { font-size: 28px; color: var(--primary-color); margin-bottom: 10px; font-weight: 800; letter-spacing: -0.5px; }
+    .section-title p { color: var(--text-muted); font-size: 15px; }
+
+    /* 미디어 쇼케이스 (유튜브 2채널) */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      justify-content: center;
+    }
+    .video-card {
+      background: var(--card-bg); border-radius: 16px; overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;
+    }
+    .video-container {
+      position: relative; padding-bottom: 177.77%; /* 세로형 9:16 비율 */
+      height: 0; background: #000;
+    }
+    .video-container iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .video-info { padding: 22px; text-align: left; }
+    .video-info h3 { font-size: 18px; color: var(--primary-color); margin-bottom: 8px; font-weight: 700; }
+    .video-info p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+    /* 카테고리 필터 탭 버튼 */
+    .filter-tabs {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 35px;
+    }
+    .tab-btn {
+      background: #fff; border: 1px solid #cbd5e1; color: #475569;
+      padding: 10px 20px; border-radius: 25px; font-size: 14px; font-weight: 600;
+      cursor: pointer; transition: all 0.25s ease;
+    }
+    .tab-btn:hover { border-color: var(--accent-color); color: var(--accent-color); }
+    .tab-btn.active {
+      background: var(--accent-color); color: #fff; border-color: var(--accent-color);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+
+    /* 포트폴리오 갤러리 그리드 */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 22px;
+    }
+    .gallery-item {
+      background: var(--card-bg); border-radius: 12px; overflow: hidden;
+      border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+    .gallery-thumb {
+      width: 100%; height: 210px; overflow: hidden; background: #0f172a; position: relative;
+    }
+    .gallery-thumb img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover .gallery-thumb img { transform: scale(1.06); }
+    .item-desc {
+      padding: 14px 16px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .item-tag {
+      font-size: 12px; font-weight: 700; color: #0284c7;
+      background: #e0f2fe; padding: 4px 9px; border-radius: 6px;
+    }
+    .item-name { font-size: 13px; font-weight: 600; color: #475569; }
+
+    /* 모달 이미지 뷰어 (라이트박스) */
+    .modal {
+      display: none; position: fixed; z-index: 2000; left: 0; top: 0;
+      width: 100%; height: 100%; background: rgba(15, 23, 42, 0.9);
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal.show { display: flex; }
+    .modal-content {
+      max-width: 90%; max-height: 85vh; border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5); object-fit: contain;
+    }
+    .modal-close {
+      position: absolute; top: 25px; right: 35px; color: #fff;
+      font-size: 36px; font-weight: bold; cursor: pointer; transition: color 0.2s;
+    }
+    .modal-close:hover { color: #38bdf8; }
+
+    /* 기술 역량 그리드 */
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .tech-card {
+      background: #fff; border-radius: 14px; padding: 28px;
+      border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04);
+    }
+    .tech-card h3 { color: var(--accent-color); font-size: 19px; margin-bottom: 12px; font-weight: 700; }
+    .tech-card p { color: #475569; font-size: 14.5px; line-height: 1.65; }
+
+    /* 견적 및 문의 */
+    .contact-box {
+      background: #fff; border-radius: 16px; padding: 45px 20px;
+      border: 1px solid #e2e8f0; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .btn-contact {
+      display: inline-block; background: var(--accent-color); color: #fff;
+      padding: 15px 38px; border-radius: 8px; text-decoration: none;
+      font-weight: 700; font-size: 16px; margin-top: 22px; transition: background 0.2s;
+    }
+    .btn-contact:hover { background: var(--accent-hover); }
+
+    /* 푸터 */
+    footer {
+      background: var(--primary-color); color: #94a3b8;
+      text-align: center; padding: 35px 20px; font-size: 13.5px; margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. 상단 네비게이션 헤더 -->
+  <header>
+    <a href="#" class="logo">(주)유앤디</a>
+    <nav>
+      <a href="#media">현장 시공영상</a>
+      <a href="#gallery">시공실적 갤러리</a>
+      <a href="#tech">핵심보유기술</a>
+      <a href="#contact">견적/기술문의</a>
+    </nav>
+  </header>
+
+  <!-- 2. 메인 히어로 배너 -->
+  <section class="hero">
+    <div class="hero-badge">National Innovative Civil Engineering</div>
+    <h1>대한민국 미래 100년을 이끌<br>특수 토목 엔지니어링 신기술</h1>
+    <p>EBS 극한직업 방영 공법. 안전성과 공기 단축 30%를 동시에 입증한 (주)유앤디의 혁신 솔루션</p>
+  </section>
+
+  <!-- 3. 대표 미디어 쇼케이스 (유튜브 2채널) -->
+  <section id="media" class="container">
+    <div class="section-title">
+      <h2>현장 검증 미디어 쇼케이스</h2>
+      <p>공인된 방송과 전문 매체가 인정한 독보적 시공 실적 및 구동 현장</p>
+    </div>
+
+    <div class="media-grid">
+      <!-- 비디오 1: 수직발파 요약본 -->
+      <div class="video-card">
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/Hn33BIm63lc" 
+            title="EBS 극한직업 특수 수직발파 공법" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-info">
+          <h3>EBS 극한직업: 특수 수직발파 공법</h3>
+          <p>고난도 암반 굴착 및 수직구 발파 현장의 압도적 안전성과 신속한 시공 시연 영상</p>
+        </div>
+      </div>
+
+      <!-- 비디오 2: 미래 100년 신기술 요약편 -->
+      <div class="video-card">
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/Q_ddWJnZsfM" 
+            title="한국의 미래 100년을 이끌 신기술" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-info">
+          <h3>한국의 미래 100년을 이끌 신기술</h3>
+          <p>토목 엔지니어링의 패러다임을 전환하는 (주)유앤디만의 혁신 공법 가이드</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 시공 실적 갤러리 (실제 업로드된 39장 매핑 & 카테고리 필터링) -->
+  <section id="gallery" class="container">
+    <div class="section-title">
+      <h2>주요 프로젝트 시공 실적</h2>
+      <p>카테고리를 클릭하면 해당 분야의 실적 사진을 모아보실 수 있습니다. (사진 클릭 시 확대)</p>
+    </div>
+
+    <!-- 탭 필터 버튼 -->
+    <div class="filter-tabs">
+      <button class="tab-btn active" onclick="filterGallery('all', this)">전체보기 (39)</button>
+      <button class="tab-btn" onclick="filterGallery('shaft', this)">수직구 공사 (11)</button>
+      <button class="tab-btn" onclick="filterGallery('lift', this)">특수목적 리프트 (12)</button>
+      <button class="tab-btn" onclick="filterGallery('bridge', this)">초장대교 (7)</button>
+      <button class="tab-btn" onclick="filterGallery('crane', this)">특수목적 크레인 (3)</button>
+      <button class="tab-btn" onclick="filterGallery('others', this)">기타 주문제작 (6)</button>
+    </div>
+
+    <!-- 사진 그리드 (실제 파일 대소문자 100% 반영) -->
+    <div class="gallery-grid">
+
+      <!-- ==================== 1. 수직구 공사 (shaft 11장) ==================== -->
+      <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_01.jpg" alt="수직구 공사 실적 01" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_01</span></div>
+      </div>
+      <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_02.jpg" alt="수직구 공사 실적 02" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_02</span></div>
+      </div>
+      <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_03.jpg" alt="수직구 공사 실적 03" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_03</span></div>
+      </div>
+      <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_04.jpg" alt="수직구 공사 실적 04" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_04</span></div>
+      </div>
+      <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_05.jpg" alt="수직구 공사 실적 05" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_05</span></div>
+      </div>
+      <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_06.jpg" alt="수직구 공사 실적 06" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_06</span></div>
+      </div>
+      <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_07.jpg" alt="수직구 공사 실적 07" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_07</span></div>
+      </div>
+      <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_08.jpg" alt="수직구 공사 실적 08" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_08</span></div>
+      </div>
+      <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_09.jpg" alt="수직구 공사 실적 09" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_09</span></div>
+      </div>
+      <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_10.jpg" alt="수직구 공사 실적 10" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_10</span></div>
+      </div>
+      <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_11.jpg" alt="수직구 공사 실적 11" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_11</span></div>
+      </div>
+
+      <!-- ==================== 2. 특수목적 리프트 (lift 12장) ==================== -->
+      <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/lift/lift_31.jpg" alt="특수 리프트 실적 31" onerror="this.src='./image/lift/LIFT_31.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_31</span></div>
+      </div>
+      <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/lift/lift_32.jpg" alt="특수 리프트 실적 32" onerror="this.src='./image/lift/LIFT_32.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_32</span></div>
+      </div>
+      <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/lift/lift_33.jpg" alt="특수 리프트 실적 33" onerror="this.src='./image/lift/LIFT_33.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_33</span></div>
+      </div>
+      <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/lift/lift_34.jpg" alt="특수 리프트 실적 34" onerror="this.src='./image/lift/LIFT_34.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_34</span></div>
+      </div>
+      <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/lift/lift_35.jpg" alt="특수 리프트 실적 35" onerror="this.src='./image/lift/LIFT_35.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_35</span></div>
+      </div>
+      <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/lift/lift_36.jpg" alt="특수 리프트 실적 36" onerror="this.src='./image/lift/LIFT_36.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_36</span></div>
+      </div>
+      <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/lift/lift_37.jpg" alt="특수 리프트 실적 37" onerror="this.src='./image/lift/LIFT_37.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_37</span></div>
+      </div>
+      <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/lift/lift_38.jpg" alt="특수 리프트 실적 38" onerror="this.src='./image/lift/LIFT_38.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_38</span></div>
+      </div>
+      <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/lift/lift_39.jpg" alt="특수 리프트 실적 39" onerror="this.src='./image/lift/LIFT_39.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_39</span></div>
+      </div>
+      <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/lift/lift_40.jpg" alt="특수 리프트 실적 40" onerror="this.src='./image/lift/LIFT_40.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_40</span></div>
+      </div>
+      <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/lift/lift_41.jpg" alt="특수 리프트 실적 41" onerror="this.src='./image/lift/LIFT_41.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_41</span></div>
+      </div>
+      <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/lift/lift_42.jpg" alt="특수 리프트 실적 42" onerror="this.src='./image/lift/LIFT_42.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_42</span></div>
+      </div>
+
+      <!-- ==================== 3. 초장대교 (bridge 7장) ==================== -->
+      <div class="gallery-item" data-cat="bridge" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/bridge/bridge_01.jpg" alt="초장대교 실적 01" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">bridge_01</span></div>
+      </div>
+      <div class="gallery-item" data-cat="bridge" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/bridge/bridge_02.jpg" alt="초장대교 실적 02" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">bridge_02</span></div>
+      </div>
+      <div class="gallery-item" data-cat="bridge" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/bridge/bridge_03.jpg" alt="초장대교 실적 03" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">bridge_03</span></div>
+      </div>
+      <div class="gallery-item" data-cat="bridge" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/bridge/bridge_04.jpg" alt="초장대교 실적 04" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">bridge_04</span></div>
+      </div>
+      <div class="gallery-item" data-cat="bridge" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/bridge/bridge_05.jpg" alt="초장대교 실적 05" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">bridge_05</span></div>
+      </div>
+      <div class="gallery-item" data-cat="bridge" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/bridge/bridge_06.jpg" alt="초장대교 실적 06" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">bridge_06</span></div>
+      </div>
+      <div class="gallery-item" data-cat="bridge" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/bridge/bridge_07.jpg" alt="초장대교 실적 07" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">bridge_07</span></div>
+      </div>
+
+      <!-- ==================== 4. 특수목적 크레인 (crane 3장) ==================== -->
+      <div class="gallery-item" data-cat="crane" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/crane/crane_41.jpg" alt="특수 크레인 실적 41" onerror="this.src='./image/crane/CARANE_41.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 크레인</span><span class="item-name">crane_41</span></div>
+      </div>
+      <div class="gallery-item" data-cat="crane" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/crane/crane_42.jpg" alt="특수 크레인 실적 42" onerror="this.src='./image/crane/CARANE_42.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 크레인</span><span class="item-name">crane_42</span></div>
+      </div>
+      <div class="gallery-item" data-cat="crane" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/crane/crane_43.jpg" alt="특수 크레인 실적 43" onerror="this.src='./image/crane/CARANE_43.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 크레인</span><span class="item-name">crane_43</span></div>
+      </div>
+
+      <!-- ==================== 5. 기타 주문제작 (others 6장) ==================== -->
+      <div class="gallery-item" data-cat="others" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/others/others_01.jpg" alt="기타 주문제작 01" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">others_01</span></div>
+      </div>
+      <div class="gallery-item" data-cat="others" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/others/others_02.jpg" alt="기타 주문제작 02" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">others_02</span></div>
+      </div>
+      <div class="gallery-item" data-cat="others" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/others/others_03.jpg" alt="기타 주문제작 03" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">others_03</span></div>
+      </div>
+      <div class="gallery-item" data-cat="others" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/others/others_04.jpg" alt="기타 주문제작 04" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">others_04</span></div>
+      </div>
+      <div class="gallery-item" data-cat="others" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/others/others_05.jpg" alt="기타 주문제작 05" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">others_05</span></div>
+      </div>
+      <div class="gallery-item" data-cat="others" onclick="openModal(this)">
+        <div class="gallery-thumb"><img src="./image/others/others_06.jpg" alt="기타 주문제작 06" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">others_06</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. 모달 이미지 뷰어 (클릭 시 확대 팝업) -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <!-- 6. 핵심 기술 역량 -->
+  <section id="tech" class="container">
+    <div class="section-title">
+      <h2>(주)유앤디 핵심 기술 역량</h2>
+      <p>수십 년간 축적된 터널, 교량, 지하 토목 현장의 현장 중심 엔지니어링 솔루션</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <h3>수직구 확공·발파 특화 공법</h3>
+        <p>기존 재래식 공법 대비 공기를 30% 이상 단축하며, 붕락 위험성을 사전에 차단하는 독보적 시공 안정성 확보.</p>
+      </div>
+      <div class="tech-card">
+        <h3>특수 건설 LIFT & 크레인</h3>
+        <p>협소한 수직구 및 터널 현장에 최적화된 고하중 자재 인양 및 작업자 전용 안전 승강 설비 구축 및 정밀 제어.</p>
+      </div>
+      <div class="tech-card">
+        <h3>초장대교 및 난공사 엔지니어링</h3>
+        <p>특수 교량, 심도 지하공간 등 난공사 구간에 적용되는 정밀 가설 계획 및 현장 맞춤형 장비 커스터마이징 지원.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 견적 및 상담 접수 창구 -->
+  <section id="contact" class="container">
+    <div class="section-title">
+      <h2>공사 의뢰 및 기술 상담</h2>
+      <p>현장 도면 검토 및 기술 제안서를 신속하게 제공해 드립니다.</p>
+    </div>
+    <div class="contact-box">
+      <h3 style="font-size: 20px; color: #0f172a; margin-bottom: 8px;">(주)유앤디 기술영업본부</h3>
+      <p style="color: #64748b;">온라인 상담 창구를 통해 문의를 남겨주시면 담당 엔지니어가 즉시 회신드립니다.</p>
+      <a href="https://forms.google.com" target="_blank" class="btn-contact">온라인 견적 문의 작성하기</a>
+    </div>
+  </section>
+
+  <!-- 8. 푸터 -->
+  <footer>
+    <p>(주)유앤디 | 사업자등록번호 및 주소 정보 | 공식 도메인: www.undkorea.com</p>
+    <p style="margin-top: 6px;">Copyright &copy; 2026 UND Korea. All rights reserved.</p>
+  </footer>
+
+  <!-- 9. 인터랙티브 제어 스크립트 -->
+  <script>
+    function filterGallery(category, clickedBtn) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('.tab-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      if(clickedBtn) clickedBtn.classList.add('active');
+
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-cat') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function openModal(element) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImg');
+      const clickedImgSrc = element.querySelector('img').src;
+      modalImg.src = clickedImgSrc;
+      modal.classList.add('show');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.remove('show');
+    }
+  </script>
+
+</body>
+</html>
