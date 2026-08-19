@@ -33,7 +33,6 @@
     nav a { color: #e2e8f0; text-decoration: none; margin-left: 18px; font-size: 14.5px; font-weight: 600; transition: color 0.2s; }
     nav a:hover { color: #38bdf8; }
     
-    /* 헤더 원클릭 직통 전화 버튼 */
     .header-tel-btn {
       background: var(--call-color); color: #fff !important; padding: 7px 15px; border-radius: 20px;
       font-size: 13.5px !important; font-weight: 700; margin-left: 18px; transition: background 0.2s;
@@ -41,7 +40,7 @@
     }
     .header-tel-btn:hover { background: var(--call-hover); }
 
-    /* 메인 히어로 배너 (표지 영역) */
+    /* 메인 히어로 배너 */
     .hero {
       background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)),
                   url('https://images.unsplash.com/photo-1541888946425-d0fbb18f15f6?auto=format&fit=crop&w=1400&q=80') center/cover;
@@ -55,7 +54,7 @@
     .hero h1 { font-size: 34px; font-weight: 800; margin-bottom: 16px; line-height: 1.35; }
     .hero p { font-size: 17px; color: #cbd5e1; max-width: 780px; margin: 0 auto 32px; line-height: 1.6; }
 
-    /* 표지(Hero) 직통 연락처 퀵 카드 박스 */
+    /* 표지 직통 연락처 카드 */
     .hero-contact-card {
       max-width: 860px; margin: 0 auto;
       background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px);
@@ -79,7 +78,7 @@
     .section-title h2 { font-size: 28px; color: var(--primary-color); margin-bottom: 10px; font-weight: 800; letter-spacing: -0.5px; }
     .section-title p { color: var(--text-muted); font-size: 15px; }
 
-    /* 미디어 쇼케이스 (유튜브 2채널) */
+    /* 미디어 쇼케이스 */
     .media-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -91,7 +90,7 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;
     }
     .video-container {
-      position: relative; padding-bottom: 177.77%; /* 세로형 9:16 비율 */
+      position: relative; padding-bottom: 177.77%;
       height: 0; background: #000;
     }
     .video-container iframe {
@@ -101,7 +100,7 @@
     .video-info h3 { font-size: 18px; color: var(--primary-color); margin-bottom: 8px; font-weight: 700; }
     .video-info p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
 
-    /* 카테고리 필터 탭 버튼 */
+    /* 카테고리 필터 탭 */
     .filter-tabs {
       display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 35px;
     }
@@ -140,6 +139,8 @@
       transition: transform 0.4s ease;
     }
     .gallery-item:hover .gallery-thumb img { transform: scale(1.06); }
+    
+    /* 🌟 실적 카드 하단 설명 바 (정갈한 공법명 룩) 🌟 */
     .item-desc {
       padding: 14px 16px;
       display: flex; justify-content: space-between; align-items: center;
@@ -148,9 +149,11 @@
       font-size: 12px; font-weight: 700; color: #0284c7;
       background: #e0f2fe; padding: 4px 9px; border-radius: 6px;
     }
-    .item-name { font-size: 13px; font-weight: 600; color: #475569; }
+    .item-name { 
+      font-size: 13px; font-weight: 600; color: #475569; 
+    }
 
-    /* 모달 이미지 뷰어 (라이트박스) */
+    /* 모달 이미지 뷰어 */
     .modal {
       display: none; position: fixed; z-index: 2000; left: 0; top: 0;
       width: 100%; height: 100%; background: rgba(15, 23, 42, 0.9);
@@ -176,7 +179,7 @@
     .tech-card h3 { color: var(--accent-color); font-size: 19px; margin-bottom: 12px; font-weight: 700; }
     .tech-card p { color: #475569; font-size: 14.5px; line-height: 1.65; }
 
-    /* 하단 견적 및 상세 상담 창구 */
+    /* 하단 상담 창구 */
     .contact-box {
       background: #fff; border-radius: 16px; padding: 45px 25px;
       border: 1px solid #e2e8f0; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
@@ -213,18 +216,16 @@
       <a href="#gallery">시공실적 갤러리</a>
       <a href="#tech">핵심보유기술</a>
       <a href="#contact">기술상담</a>
-      <!-- 상단 원클릭 대표전화 버튼 -->
       <a href="tel:010-2575-1822" class="header-tel-btn">📞 010-2575-1822</a>
     </nav>
   </header>
 
-  <!-- 2. 메인 히어로 배너 (표지 영역) -->
+  <!-- 2. 메인 히어로 배너 -->
   <section class="hero">
     <div class="hero-badge">National Innovative Civil Engineering</div>
     <h1>대한민국 미래 100년을 이끌<br>특수 토목 엔지니어링 신기술</h1>
     <p>EBS 극한직업 방영 공법. 안전성과 공기 단축 30%를 동시에 입증한 (주)유앤디의 혁신 솔루션</p>
 
-    <!-- 🌟 표지 직통 연락처 퀵 카드 박스 🌟 -->
     <div class="hero-contact-card">
       <div class="contact-item">
         <div class="contact-icon">📱</div>
@@ -252,7 +253,7 @@
     </div>
   </section>
 
-  <!-- 3. 대표 미디어 쇼케이스 (유튜브 2채널) -->
+  <!-- 3. 대표 미디어 쇼케이스 -->
   <section id="media" class="container">
     <div class="section-title">
       <h2>현장 검증 미디어 쇼케이스</h2>
@@ -260,7 +261,6 @@
     </div>
 
     <div class="media-grid">
-      <!-- 비디오 1: 수직발파 요약본 -->
       <div class="video-card">
         <div class="video-container">
           <iframe 
@@ -276,7 +276,6 @@
         </div>
       </div>
 
-      <!-- 비디오 2: 미래 100년 신기술 요약편 -->
       <div class="video-card">
         <div class="video-container">
           <iframe 
@@ -294,14 +293,13 @@
     </div>
   </section>
 
-  <!-- 4. 시공 실적 갤러리 (업로드된 39장 매핑 & 카테고리 필터링) -->
+  <!-- 4. 시공 실적 갤러리 (파일명 제거 ➡️ 품격 있는 공법명 정렬) -->
   <section id="gallery" class="container">
     <div class="section-title">
       <h2>주요 프로젝트 시공 실적</h2>
       <p>카테고리를 클릭하면 해당 분야의 실적 사진을 모아보실 수 있습니다. (사진 클릭 시 확대)</p>
     </div>
 
-    <!-- 탭 필터 버튼 -->
     <div class="filter-tabs">
       <button class="tab-btn active" onclick="filterGallery('all', this)">전체보기 (39)</button>
       <button class="tab-btn" onclick="filterGallery('shaft', this)">수직구 공사 (11)</button>
@@ -311,179 +309,178 @@
       <button class="tab-btn" onclick="filterGallery('others', this)">기타 주문제작 (6)</button>
     </div>
 
-    <!-- 사진 그리드 (실제 파일 대소문자 100% 매칭) -->
     <div class="gallery-grid">
 
       <!-- ==================== 1. 수직구 공사 (shaft 11장) ==================== -->
       <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/shaft/shaft_01.jpg" alt="수직구 공사 실적 01" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_01</span></div>
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_01.jpg" alt="수직구 공사 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">대구경 수직구 확공</span></div>
       </div>
       <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/shaft/shaft_02.jpg" alt="수직구 공사 실적 02" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_02</span></div>
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_02.jpg" alt="수직구 공사 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">암반 굴착 및 수직발파</span></div>
       </div>
       <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/shaft/shaft_03.jpg" alt="수직구 공사 실적 03" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_03</span></div>
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_03.jpg" alt="수직구 공사 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">붕락 방지 안전 공법</span></div>
       </div>
       <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/shaft/shaft_04.jpg" alt="수직구 공사 실적 04" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_04</span></div>
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_04.jpg" alt="수직구 공사 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">공기단축 시공 현장</span></div>
       </div>
       <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/shaft/shaft_05.jpg" alt="수직구 공사 실적 05" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_05</span></div>
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_05.jpg" alt="수직구 공사 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">특수 발파 장비 운용</span></div>
       </div>
       <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/shaft/shaft_06.jpg" alt="수직구 공사 실적 06" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_06</span></div>
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_06.jpg" alt="수직구 공사 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">수직구 심도 굴착</span></div>
       </div>
       <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/shaft/shaft_07.jpg" alt="수직구 공사 실적 07" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_07</span></div>
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_07.jpg" alt="수직구 공사 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">현장 안전 관리 시공</span></div>
       </div>
       <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/shaft/shaft_08.jpg" alt="수직구 공사 실적 08" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_08</span></div>
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_08.jpg" alt="수직구 공사 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">정밀 발파 제어</span></div>
       </div>
       <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/shaft/shaft_09.jpg" alt="수직구 공사 실적 09" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_09</span></div>
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_09.jpg" alt="수직구 공사 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">터널 연계 수직구</span></div>
       </div>
       <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/shaft/shaft_10.jpg" alt="수직구 공사 실적 10" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_10</span></div>
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_10.jpg" alt="수직구 공사 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">고난도 암반 파쇄</span></div>
       </div>
       <div class="gallery-item" data-cat="shaft" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/shaft/shaft_11.jpg" alt="수직구 공사 실적 11" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">shaft_11</span></div>
+        <div class="gallery-thumb"><img src="./image/shaft/shaft_11.jpg" alt="수직구 공사 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">수직구 공사</span><span class="item-name">EBS 방송 검증 공법</span></div>
       </div>
 
       <!-- ==================== 2. 특수목적 리프트 (lift 12장) ==================== -->
       <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/lift/lift_31.jpg" alt="특수 리프트 실적 31" onerror="this.src='./image/lift/LIFT_31.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_31</span></div>
+        <div class="gallery-thumb"><img src="./image/lift/lift_31.jpg" alt="특수 리프트 실적" onerror="this.src='./image/lift/LIFT_31.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">고하중 안전 승강기</span></div>
       </div>
       <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/lift/lift_32.jpg" alt="특수 리프트 실적 32" onerror="this.src='./image/lift/LIFT_32.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_32</span></div>
+        <div class="gallery-thumb"><img src="./image/lift/lift_32.jpg" alt="특수 리프트 실적" onerror="this.src='./image/lift/LIFT_32.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">수직구 전용 LIFT</span></div>
       </div>
       <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/lift/lift_33.jpg" alt="특수 리프트 실적 33" onerror="this.src='./image/lift/LIFT_33.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_33</span></div>
+        <div class="gallery-thumb"><img src="./image/lift/lift_33.jpg" alt="특수 리프트 실적" onerror="this.src='./image/lift/LIFT_33.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">작업자 안전 승강 설비</span></div>
       </div>
       <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/lift/lift_34.jpg" alt="특수 리프트 실적 34" onerror="this.src='./image/lift/LIFT_34.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_34</span></div>
+        <div class="gallery-thumb"><img src="./image/lift/lift_34.jpg" alt="특수 리프트 실적" onerror="this.src='./image/lift/LIFT_34.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">중량 자재 수직 이송</span></div>
       </div>
       <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/lift/lift_35.jpg" alt="특수 리프트 실적 35" onerror="this.src='./image/lift/LIFT_35.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_35</span></div>
+        <div class="gallery-thumb"><img src="./image/lift/lift_35.jpg" alt="특수 리프트 실적" onerror="this.src='./image/lift/LIFT_35.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">터널 고소 리프트</span></div>
       </div>
       <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/lift/lift_36.jpg" alt="특수 리프트 실적 36" onerror="this.src='./image/lift/LIFT_36.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_36</span></div>
+        <div class="gallery-thumb"><img src="./image/lift/lift_36.jpg" alt="특수 리프트 실적" onerror="this.src='./image/lift/LIFT_36.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">특수 현장 맞춤 제작</span></div>
       </div>
       <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/lift/lift_37.jpg" alt="특수 리프트 실적 37" onerror="this.src='./image/lift/LIFT_37.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_37</span></div>
+        <div class="gallery-thumb"><img src="./image/lift/lift_37.jpg" alt="특수 리프트 실적" onerror="this.src='./image/lift/LIFT_37.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">안전 제어 시스템 구축</span></div>
       </div>
       <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/lift/lift_38.jpg" alt="특수 리프트 실적 38" onerror="this.src='./image/lift/LIFT_38.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_38</span></div>
+        <div class="gallery-thumb"><img src="./image/lift/lift_38.jpg" alt="특수 리프트 실적" onerror="this.src='./image/lift/LIFT_38.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">협소공간 양중 설비</span></div>
       </div>
       <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/lift/lift_39.jpg" alt="특수 리프트 실적 39" onerror="this.src='./image/lift/LIFT_39.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_39</span></div>
+        <div class="gallery-thumb"><img src="./image/lift/lift_39.jpg" alt="특수 리프트 실적" onerror="this.src='./image/lift/LIFT_39.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">고신뢰도 승강 운용</span></div>
       </div>
       <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/lift/lift_40.jpg" alt="특수 리프트 실적 40" onerror="this.src='./image/lift/LIFT_40.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_40</span></div>
+        <div class="gallery-thumb"><img src="./image/lift/lift_40.jpg" alt="특수 리프트 실적" onerror="this.src='./image/lift/LIFT_40.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">건설 현장 LIFT 시공</span></div>
       </div>
       <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/lift/lift_41.jpg" alt="특수 리프트 실적 41" onerror="this.src='./image/lift/LIFT_41.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_41</span></div>
+        <div class="gallery-thumb"><img src="./image/lift/lift_41.jpg" alt="특수 리프트 실적" onerror="this.src='./image/lift/LIFT_41.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">긴급 자재 수송 시스템</span></div>
       </div>
       <div class="gallery-item" data-cat="lift" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/lift/lift_42.jpg" alt="특수 리프트 실적 42" onerror="this.src='./image/lift/LIFT_42.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">lift_42</span></div>
+        <div class="gallery-thumb"><img src="./image/lift/lift_42.jpg" alt="특수 리프트 실적" onerror="this.src='./image/lift/LIFT_42.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 리프트</span><span class="item-name">특수 승강장치 가동</span></div>
       </div>
 
       <!-- ==================== 3. 초장대교 (bridge 7장) ==================== -->
       <div class="gallery-item" data-cat="bridge" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/bridge/bridge_01.jpg" alt="초장대교 실적 01" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">bridge_01</span></div>
+        <div class="gallery-thumb"><img src="./image/bridge/bridge_01.jpg" alt="초장대교 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">초장대교 정밀 가설</span></div>
       </div>
       <div class="gallery-item" data-cat="bridge" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/bridge/bridge_02.jpg" alt="초장대교 실적 02" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">bridge_02</span></div>
+        <div class="gallery-thumb"><img src="./image/bridge/bridge_02.jpg" alt="초장대교 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">해상 교량 특수 양중</span></div>
       </div>
       <div class="gallery-item" data-cat="bridge" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/bridge/bridge_03.jpg" alt="초장대교 실적 03" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">bridge_03</span></div>
+        <div class="gallery-thumb"><img src="./image/bridge/bridge_03.jpg" alt="초장대교 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">사장교 케이블 시공지원</span></div>
       </div>
       <div class="gallery-item" data-cat="bridge" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/bridge/bridge_04.jpg" alt="초장대교 실적 04" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">bridge_04</span></div>
+        <div class="gallery-thumb"><img src="./image/bridge/bridge_04.jpg" alt="초장대교 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">장경간 교량 엔지니어링</span></div>
       </div>
       <div class="gallery-item" data-cat="bridge" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/bridge/bridge_05.jpg" alt="초장대교 실적 05" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">bridge_05</span></div>
+        <div class="gallery-thumb"><img src="./image/bridge/bridge_05.jpg" alt="초장대교 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">고소 특수 가설 공법</span></div>
       </div>
       <div class="gallery-item" data-cat="bridge" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/bridge/bridge_06.jpg" alt="초장대교 실적 06" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">bridge_06</span></div>
+        <div class="gallery-thumb"><img src="./image/bridge/bridge_06.jpg" alt="초장대교 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">교량 상판 인양 거치</span></div>
       </div>
       <div class="gallery-item" data-cat="bridge" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/bridge/bridge_07.jpg" alt="초장대교 실적 07" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">bridge_07</span></div>
+        <div class="gallery-thumb"><img src="./image/bridge/bridge_07.jpg" alt="초장대교 실적" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">초장대교</span><span class="item-name">특수 교량 현장 솔루션</span></div>
       </div>
 
       <!-- ==================== 4. 특수목적 크레인 (crane 3장) ==================== -->
       <div class="gallery-item" data-cat="crane" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/crane/crane_41.jpg" alt="특수 크레인 실적 41" onerror="this.src='./image/crane/CARANE_41.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 크레인</span><span class="item-name">crane_41</span></div>
+        <div class="gallery-thumb"><img src="./image/crane/crane_41.jpg" alt="특수 크레인 실적" onerror="this.src='./image/crane/CARANE_41.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 크레인</span><span class="item-name">지하 터널 중량물 양중</span></div>
       </div>
       <div class="gallery-item" data-cat="crane" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/crane/crane_42.jpg" alt="특수 크레인 실적 42" onerror="this.src='./image/crane/CARANE_42.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 크레인</span><span class="item-name">crane_42</span></div>
+        <div class="gallery-thumb"><img src="./image/crane/crane_42.jpg" alt="특수 크레인 실적" onerror="this.src='./image/crane/CARANE_42.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 크레인</span><span class="item-name">협소공간 정밀 거치 크레인</span></div>
       </div>
       <div class="gallery-item" data-cat="crane" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/crane/crane_43.jpg" alt="특수 크레인 실적 43" onerror="this.src='./image/crane/CARANE_43.jpg'" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">특수 크레인</span><span class="item-name">crane_43</span></div>
+        <div class="gallery-thumb"><img src="./image/crane/crane_43.jpg" alt="특수 크레인 실적" onerror="this.src='./image/crane/CARANE_43.jpg'" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">특수 크레인</span><span class="item-name">특수 토목 인양 엔지니어링</span></div>
       </div>
 
       <!-- ==================== 5. 기타 주문제작 (others 6장) ==================== -->
       <div class="gallery-item" data-cat="others" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/others/others_01.jpg" alt="기타 주문제작 01" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">others_01</span></div>
+        <div class="gallery-thumb"><img src="./image/others/others_01.jpg" alt="기타 주문제작" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">현장 맞춤형 장비 제작</span></div>
       </div>
       <div class="gallery-item" data-cat="others" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/others/others_02.jpg" alt="기타 주문제작 02" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">others_02</span></div>
+        <div class="gallery-thumb"><img src="./image/others/others_02.jpg" alt="기타 주문제작" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">특수 토목 구조물 제작</span></div>
       </div>
       <div class="gallery-item" data-cat="others" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/others/others_03.jpg" alt="기타 주문제작 03" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">others_03</span></div>
+        <div class="gallery-thumb"><img src="./image/others/others_03.jpg" alt="기타 주문제작" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">난공사 전용 특허 장비</span></div>
       </div>
       <div class="gallery-item" data-cat="others" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/others/others_04.jpg" alt="기타 주문제작 04" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">others_04</span></div>
+        <div class="gallery-thumb"><img src="./image/others/others_04.jpg" alt="기타 주문제작" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">정밀 가공 및 기구 설계</span></div>
       </div>
       <div class="gallery-item" data-cat="others" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/others/others_05.jpg" alt="기타 주문제작 05" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">others_05</span></div>
+        <div class="gallery-thumb"><img src="./image/others/others_05.jpg" alt="기타 주문제작" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">현장 최적화 공기단축 설비</span></div>
       </div>
       <div class="gallery-item" data-cat="others" onclick="openModal(this)">
-        <div class="gallery-thumb"><img src="./image/others/others_06.jpg" alt="기타 주문제작 06" loading="lazy"></div>
-        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">others_06</span></div>
+        <div class="gallery-thumb"><img src="./image/others/others_06.jpg" alt="기타 주문제작" loading="lazy"></div>
+        <div class="item-desc"><span class="item-tag">기타 주문제작</span><span class="item-name">주문제작 특수 엔지니어링</span></div>
       </div>
 
     </div>
   </section>
 
-  <!-- 5. 모달 이미지 뷰어 (클릭 시 확대 팝업) -->
+  <!-- 5. 모달 이미지 뷰어 -->
   <div id="imageModal" class="modal" onclick="closeModal()">
     <span class="modal-close">&times;</span>
     <img class="modal-content" id="modalImg">
@@ -529,7 +526,7 @@
     </div>
   </section>
 
-  <!-- 8. 푸터 (기업 상세 정보) -->
+  <!-- 8. 푸터 -->
   <footer>
     <p style="font-weight: 700; color: #f1f5f9; font-size: 15px; margin-bottom: 6px;">(주)유앤디 | 특수 토목 엔지니어링 전문기업</p>
     <p>대표전화: <a href="tel:010-2575-1822">010-2575-1822</a> | 회사전화: <a href="tel:070-8202-1822">070-8202-1822</a> | 공식 이메일: <a href="mailto:1822kang@gmail.com">1822kang@gmail.com</a></p>
