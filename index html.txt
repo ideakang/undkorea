@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(주)유앤디 - 특수 토목 엔지니어링 & 수직구 확공·발파 신기술</title>
+  <meta name="description" content="EBS 극한직업 방영, 한국의 미래 100년을 이끌 특수 수직구 확공 및 발파 신기술 - (주)유앤디">
+  <style>
+    :root {
+      --primary-color: #0f172a;
+      --accent-color: #0284c7;
+      --accent-hover: #0369a1;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', 'Malgun Gothic', sans-serif; }
+    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+    
+    /* 상단 네비게이션 헤더 */
+    header {
+      position: sticky; top: 0; background: var(--primary-color);
+      color: #fff; padding: 15px 24px; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .logo { font-size: 20px; font-weight: 800; color: #38bdf8; text-decoration: none; letter-spacing: 0.5px; }
+    nav a { color: #e2e8f0; text-decoration: none; margin-left: 20px; font-size: 15px; font-weight: 600; transition: color 0.2s; }
+    nav a:hover { color: #38bdf8; }
+
+    /* 메인 히어로 배너 */
+    .hero {
+      background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.82)),
+                  url('https://images.unsplash.com/photo-1541888946425-d0fbb18f15f6?auto=format&fit=crop&w=1400&q=80') center/cover;
+      color: #fff; text-align: center; padding: 90px 20px;
+    }
+    .hero-badge {
+      display: inline-block; background: rgba(56, 189, 248, 0.2); color: #38bdf8;
+      border: 1px solid #38bdf8; padding: 6px 14px; border-radius: 20px;
+      font-size: 13px; font-weight: 600; margin-bottom: 15px;
+    }
+    .hero h1 { font-size: 32px; font-weight: 800; margin-bottom: 15px; line-height: 1.3; }
+    .hero p { font-size: 17px; color: #cbd5e1; max-width: 750px; margin: 0 auto 30px; }
+
+    /* 공통 레이아웃 */
+    .container { max-width: 1140px; margin: 60px auto; padding: 0 20px; }
+    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title h2 { font-size: 28px; color: var(--primary-color); margin-bottom: 10px; font-weight: 700; }
+    .section-title p { color: var(--text-muted); font-size: 15px; }
+
+    /* 미디어 쇼케이스 (유튜브 2채널 반응형 비디오 카드) */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      justify-content: center;
+    }
+    .video-card {
+      background: #fff; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+    .video-container {
+      position: relative; padding-bottom: 177.77%; /* 세로형 9:16 비율 최적화 */
+      height: 0; background: #000;
+    }
+    .video-container iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .video-info { padding: 20px; text-align: left; }
+    .video-info h3 { font-size: 18px; color: var(--primary-color); margin-bottom: 8px; font-weight: 700; }
+    .video-info p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+    /* 보유 핵심 기술 그리드 */
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .tech-card {
+      background: #fff; border-radius: 12px; padding: 25px;
+      border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04);
+    }
+    .tech-card h3 { color: var(--accent-color); font-size: 18px; margin-bottom: 10px; font-weight: 700; }
+    .tech-card p { color: #475569; font-size: 14px; line-height: 1.6; }
+
+    /* 고객 문의(Contact) 섹션 */
+    .contact-box {
+      background: #fff; border-radius: 16px; padding: 40px 20px;
+      border: 1px solid #e2e8f0; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .btn-contact {
+      display: inline-block; background: var(--accent-color); color: #fff;
+      padding: 14px 35px; border-radius: 8px; text-decoration: none;
+      font-weight: 700; font-size: 16px; margin-top: 20px; transition: background 0.2s;
+    }
+    .btn-contact:hover { background: var(--accent-hover); }
+
+    /* 푸터 */
+    footer {
+      background: var(--primary-color); color: #94a3b8;
+      text-align: center; padding: 35px 20px; font-size: 13px; margin-top: 70px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 네비게이션 -->
+  <header>
+    <a href="#" class="logo">(주)유앤디</a>
+    <nav>
+      <a href="#media">현장 시공영상</a>
+      <a href="#tech">핵심보유기술</a>
+      <a href="#contact">견적/기술문의</a>
+    </nav>
+  </header>
+
+  <!-- 메인 히어로 섹션 -->
+  <section class="hero">
+    <div class="hero-badge">National Innovative Civil Engineering</div>
+    <h1>대한민국 미래 100년을 이끌<br>특수 토목 엔지니어링 신기술</h1>
+    <p>EBS 극한직업 방영 공법. 안전성과 공기 단축 30%를 동시에 입증한 (주)유앤디의 현장 솔루션</p>
+  </section>
+
+  <!-- 대표 미디어 쇼케이스 (EBS 극한직업 & 미래 100년 신기술) -->
+  <section id="media" class="container">
+    <div class="section-title">
+      <h2>현장 검증 미디어 쇼케이스</h2>
+      <p>공인된 방송과 전문 매체가 인정한 독보적 시공 실적 및 구동 현장</p>
+    </div>
+
+    <div class="media-grid">
+      <!-- 비디오 1: 강석봉_극한직업 수직발파 요약본 -->
+      <div class="video-card">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/★수직발파_유튜브_Hn33BIm63lc ?start=19&autoplay=0&mute=1&loop=1" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3>EBS 극한직업: 특수 수직발파 공법</h3>
+          <p>고난도 암반 굴착 및 수직구 발파 현장의 압도적 안전성과 신속한 시공 시연 영상</p>
+        </div>
+      </div>
+
+      <!-- 비디오 2: 강석봉_한국의 미래 100년을 이끌 신기술 요약편 -->
+      <div class="video-card">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/★미래신기술_유튜브_Q_ddWJnZsfM?autoplay=0&mute=1&loop=1" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3>한국의 미래 100년을 이끌 신기술</h3>
+          <p>토목 엔지니어링의 패러다임을 전환하는 (주)유앤디만의 혁신 공법 가이드</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 핵심 기술 안내 -->
+  <section id="tech" class="container">
+    <div class="section-title">
+      <h2>(주)유앤디 핵심 엔지니어링 역량</h2>
+      <p>수십 년간 축적된 터널 및 지하 토목 현장 노하우</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <h3>수직구 확공·발파 특화 공법</h3>
+        <p>기존 재래식 공법 대비 공기를 30% 이상 단축하며, 붕락 위험성을 사전에 차단하는 독보적 시공 안정성 확보.</p>
+      </div>
+      <div class="tech-card">
+        <h3>특수 건설 LIFT 시스템</h3>
+        <p>협소한 수직구 및 터널 현장에 최적화된 고하중 자재 인양 및 작업자 전용 안전 승강 설비 시공.</p>
+      </div>
+      <div class="tech-card">
+        <h3>토목 크레인(Civil Crane) 솔루션</h3>
+        <p>고난도 중량물 인양과 지하 구조물 정밀 거치를 위한 맞춤형 엔지니어링 설계 및 현장 운용 지원.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 견적 및 상담 접수 -->
+  <section id="contact" class="container">
+    <div class="section-title">
+      <h2>공사 의뢰 및 기술 상담</h2>
+      <p>현장 도면 검토 및 기술 제안서를 신속하게 제공해 드립니다.</p>
+    </div>
+    <div class="contact-box">
+      <h3 style="font-size: 20px; color: #0f172a; margin-bottom: 8px;">(주)유앤디 기술영업본부</h3>
+      <p style="color: #64748b;">온라인 상담 창구를 통해 문의를 남겨주시면 담당 엔지니어가 즉시 회신드립니다.</p>
+      <a href="https://forms.google.com" target="_blank" class="btn-contact">온라인 견적 문의 작성하기</a>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer>
+    <p>(주)유앤디 | 사업자등록번호 및 주소 정보 | 공식 도메인: www.undkorea.com</p>
+    <p style="margin-top: 6px;">Copyright &copy; 2026 UND Korea. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
